@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Case : MonoBehaviour {
 
-	public Case diagonal1;
-	public Piece piece;
-	public Vector2 coordinates;
-
-	// Use this for initialization
-	void Start () {
+	
+	
+	public Vector2 coordonnees;
+    public Color couleur;
+    public Piece piece;
+    public Case diagonal1;
+    // Use this for initialization
+    void Start () {
 		
 	
 	}

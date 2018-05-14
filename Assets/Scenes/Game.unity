@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 8
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -54,11 +55,10 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
-    m_TextureWidth: 1024
-    m_TextureHeight: 1024
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c09932c520d0158418ad36ffd9c8ae9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taille: 8
   casePrefab: {fileID: 0}
   piecePrefab: {fileID: 0}
   plateauPrefab: {fileID: 0}
@@ -169,10 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plateau: {fileID: 0}
-  casePrefab: {fileID: 1641806644192688, guid: 3d75b2a774c4ee343a5c31052cc57b1a, type: 2}
-  piecePrefab: {fileID: 1996647736710300, guid: ba6384823fe9e07448fe2e9ea4df8d05,
-    type: 2}
-  plateauPrefab: {fileID: 0}
 --- !u!114 &476783100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,8 +181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fe625dc3dac2447a3c07ef1fef03ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diagonal1: {fileID: 0}
+  coordonnees: {x: 0, y: 0}
+  couleur: {r: 0, g: 0, b: 0, a: 0}
   piece: {fileID: 0}
+  diagonal1: {fileID: 0}
 --- !u!4 &476783101
 Transform:
   m_ObjectHideFlags: 0
@@ -195,9 +194,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 498023671}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &498023667
 GameObject:
@@ -273,13 +273,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 498023667}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0, y: 0.0009599549, z: 0, w: 0.9999996}
+  m_LocalPosition: {x: 3.84, y: 6.09, z: -9.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 476783101}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.11, z: 0}
 --- !u!1 &585613155
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,5 +343,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
